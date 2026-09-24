@@ -1,0 +1,111 @@
+Variable / Field Name,Form Name,Section Header,Field Type,Field Label,"Choices, Calculations, OR Slider Labels",Field Note,Text Validation Type OR Show Slider Number,Text Validation Min,Text Validation Max,Identifier?,Branching Logic (Show field only if...),Required Field?,Custom Alignment,Question Number (surveys only),Matrix Group Name,Matrix Ranking?,Field Annotation
+record_id,patient_information,,text,Record ID,,,,,,,,,,,,,
+part_of_clinical_trial,patient_information,,yesno,Is this case reviewed as part of a clinical trial?,,,,,,,,,,,,, @HIDDEN
+cohort_id,patient_information,,text,Cohort ID ,,Internal Reference ID,,,,,,y,,,,,
+mrn,patient_information,,text,MRN,,"The patient's JH medical record number, including code system and unique value",,,,y,,y,,,,,
+mrn_enterprise,patient_information,,text,MRN Enterprise,,,,,,y,,,,,,,
+first_name,patient_information,,text,First Name,,The given name(s) of the patient,,,,y,,y,,,,,
+last_name,patient_information,,text,Last Name,,The family name of the patient,,,,y,,y,,,,,
+sex,patient_information,,dropdown,Sex,"0, Female | 1, Male",The gender the patient was given at birth,,,,,,,,,,,
+gender,patient_information,,radio,Administrative Gender,"0, Female | 1, Male | 2, Other | 99, Unknown","A gender classification used for administrative purposes, not necessarily the same as a biological description or a sex identity.",,,,,,,,,,,
+race,patient_information,,dropdown,Race,"0, American Indian/Alaska Native | 1, Asian | 2, Native Hawaiian or Other Pacific Islander | 3, Black or African American | 4, White | 5, More Than One Race | 6, Unknown / Not Reported",Text code for patient's race,,,,,,,,,,,
+ethnicity,patient_information,,dropdown,Ethnicity,"0, Hispanic or Latino | 1, NOT Hispanic or Latino | 2, Unknown/Not Reported",Text code patient's ethnicity,,,,,,,,,,,
+dob,patient_information,,text,Date of Birth,,"Date of birth in the form MMDDYYYY, hyphens will be autocompleted",date_mdy,,,y,,,,,,, @HIDEBUTTON
+pt_address,patient_information,,text,Address Line,,The street name and number or P.O. box of the physical home address of the patient,,,,y,,,,,,, @HIDDEN
+pt_address_city,patient_information,,text,Address City,,Name of city of the physical home address of the patient,,,,y,,,,,,, @HIDDEN
+pt_address_state,patient_information,,text,Address State,,Name of state of the physical home address of the patient,,,,y,,,,,,, @HIDDEN
+pt_address_zipcode,patient_information,,text,Address Zip Code,,The postal (zip) code of the physical home address of the patient,,,,y,,,,,,, @HIDDEN
+pt_address_period,patient_information,,text,Address Period,,Time period address has been in use,,,,y,,,,,,, @HIDDEN
+smoking_status,patient_information,,radio,What is the smoking status of the patient?,"0, Current Smoker | 1, Former Smoker | 2, Never Smoker | 98, Smoker, Current Status Unknown | 99, Unknown if Ever Smoked",Text code for patient's smoking status,,,,,,,,,,, @HIDDEN
+pack_years,patient_information,,text,Pack-years,,Number with one decimal place for pack-yearss,number_1dp,,,,[smoking_status] = '0' or [smoking_status] = '1' or [smoking_status] = '98',,,,,, @HIDDEN
+other_exposures,patient_information,,checkbox,Other Exposures,"1, Aflatoxins | 2, Aristolochic Acids | 3, Arsenic | 4, Asbestos | 5, Benzene | 6, Benzidine | 7, Beryllium | 8, 3-Butadiene | 9, Cadmium | 10, Coal Tar and Coal-Tar Pitch | 11, Coke-Oven Emissions | 12, Crystalline Silica (respirable size) | 13, Erionite | 14, Ethylene Oxide | 15, Formaldehyde | 16, Hexavalent Chromium Compounds | 17, Indoor Emissions from the Household Combustion of Coal | 18, Mineral Oils: Untreated and Mildly Treated | 19, Nickel Compounds | 20, Radon | 21, Secondhand Tobacco Smoke (Environmental Tobacco Smoke) | 22, Soot | 23, Strong Inorganic Acid Mists Containing Sulfuric Acid | 24, Thorium | 25, Trichloroethylene | 26, Vinyl Chloride | 27, Wood Dust",Check one or more other exposures,,,,,,,,,,, @HIDDEN
+germline,patient_information,,radio,Germline testing performed?,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,,, @HIDDEN
+tissue,patient_information,,radio,Tissue NGS performed?,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,,, @HIDDEN
+liquid_biopsy,patient_information,,radio,Liquid biopsy performed?,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,,, @HIDDEN
+other_mol_test,patient_information,,checkbox,Other molecular testing performed?,"1, FISH | 2, CTCs | 3, Other",,,,,,,,,,,, @HIDDEN
+extraction_err_flag_pt_info,patient_information,,truefalse,Automatic Extraction Error Flag - Data Needs Review,,,,,,,,,,,,,
+date_cur_pt_info,patient_information,,text,Date Last Curated (Patient Information) ,,"Date of curation in the form MMDDYYYY, hyphens will be autocompleted",datetime_seconds_mdy,,,y,,,,,,, @HIDDEN-SURVEY
+cur_by_pt_info,patient_information,,text,Curated By (Patient Information) ,,Please enter your full name,,,,,,,,,,, @HIDDEN-SURVEY
+pt_info_last_updated_dt,patient_information,,text,Last Updated Date,,,,,,,,,,,,, @READONLY @NOW
+ecog,ecog_performance_status,,dropdown,ECOG Performance Status Score,"0, 0 | 1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5",Evaluate patient's performance status using the ECOG score,,,,,,,,,,,
+ecogps_interpretation,ecog_performance_status,,text,ECOG Performance Status Interpretation,,A categorical assessment of the ECOG score,,,,,,,,,,,
+ecog_date_full,ecog_performance_status,,text,ECOG Assessment Date,,Encounter Contact Date of note that ECOG performance status was identified from,date_mdy,,,,,,,,,,
+note_id_ecogps,ecog_performance_status,,text,Note ID,,Note ID of note that ECOG performance status was identified from,,,,,,,,,,,
+note_type_ecogps,ecog_performance_status,,text,Note Type,,Note Type of note that ECOG performance status was identified from,,,,,,,,,,,
+message_dt_ecogps,ecog_performance_status,,text,Message Date,,Message DT of note that ECOG performance status was identified from,,,,,,,,,,,
+date_cur_ecogps,ecog_performance_status,,text,Date Last Curated (ECOG Performance Status),,"Date of curation in the form MMDDYYYY, hyphens will be autocompleted",datetime_seconds_mdy,,,,,,,,,, @HIDDEN-SURVEY
+cur_by_ecogps,ecog_performance_status,,text,Curated By (ECOG Performance Status),,Please enter your full name,,,,,,,,,,, @HIDDEN-SURVEY
+ecogps_last_updated_dt,ecog_performance_status,,text,Last Updated Date,,,datetime_seconds_mdy,,,,,,,,,, @READONLY @NOW
+heme_onc_tests_id,assay,,text,Hematology Oncology Tests ID,,"For tracking only, do not edit",integer,,,,,,,,,, @READONLY @HIDDEN
+result_id_assay,assay,,text,Test Result ID,,,,,,y,,,,,,,
+order_id_assay,assay,,text,Test Order ID,,,,,,y,,,,,,,
+proc_code_assay,assay,,text,Test Procedure Code,,,,,,,,,,,,,
+proc_name_assay,assay,,text,Test Procedure Name,,,,,,,,,,,,,
+test_order_date,assay,,text,Test Ordering Date,,,datetime_seconds_mdy,,,,,,,,,, @HIDEBUTTON
+specimen_collected_date_assay,assay,,text,Specimen Collection Date,,,datetime_seconds_mdy,,,,,,,,,, @HIDEBUTTON
+test_result_date,assay,,text,Test Result Date,,,datetime_seconds_mdy,,,,,,,,,, @HIDEBUTTON
+specimen_number_assay,assay,,text,Specimen Number,,,,,,,,,,,,,
+genome_assembly_assay,assay,,dropdown,Genome Assembly,"1, GRCh38 | 2, GRCh37/Hg19 | 3, Hg18 | 99, Unknown",,,,,,,,,,,,
+mdl_test_version,assay,,text,MDL Test Version,,,,,,,,,,,,,
+mdl_caller_version,assay,,text,MDL Variant Caller Version,,,,,,,,,,,,,
+test_interpretation_notes,assay,,notes,Interpretation Notes,,,,,,,,,,,,,
+test_category_notes,assay,,notes,Category Notes,,,,,,,,,,,,,
+heme_mic_array_results,assay,,text,Mic Array Results,,,,,,,,,,,,, @HIDDEN
+extraction_err_flag_assay,assay,,truefalse,Automatic Extraction Error Flag - Data Needs Review,,,,,,,,,,,,,
+date_cur_assay,assay,,text,Date Last Curated (Assay),,,datetime_seconds_mdy,,,,,,,,,, @HIDDEN-SURVEY
+cur_by_assay,assay,,text,Curated By (Assay),,,,,,,,,,,,, @HIDDEN-SURVEY
+assay_last_updated_dt,assay,,text,Last Updated Date,,,,,,,,,,,,, @READONLY @NOW
+somatic_genomics_id,somatic_genomics,,text,Somatic Genomics ID,,,,,,,,,,,,, @READONLY @HIDDEN
+sg_cohort_id,somatic_genomics,,text,Cohort ID,,,,,,,,,,,,, @READONLY @HIDDEN
+result_id_genomics,somatic_genomics,,text,Test Result ID,,,,,,y,,,,,,,
+order_id_genomics,somatic_genomics,,text,Test Order ID,,,,,,y,,,,,,,
+proc_code_genomics,somatic_genomics,,text,Test Procedure Code,,,,,,,,,,,,,
+proc_name_genomics,somatic_genomics,,text,Test Procedure Name,,,,,,,,,,,,,
+specimen_number_genomics,somatic_genomics,,text,Specimen Number,,,,,,,,,,,,,
+specimen_collected_date_genomics,somatic_genomics,,text,Specimen Collection Date,,,datetime_seconds_mdy,,,,,,,,,,
+gene_name_hgnc,somatic_genomics,,text,Name of Mutated Gene,,,,,,,,y,,,,,
+gene_id_hgnc_id,somatic_genomics,,text,ID of Mutated Gene,BIOPORTAL:HGNC-NR,The gene id: based on the HGNC nomenclature,,,,,,y,,,,,
+mutation_type,somatic_genomics,,dropdown,"Is the mutation reported a sequence alteration or a structural alteration (amplification, deletion or fusion/rearrangement)?
+","1, Sequence Alteration | 2, Structural Alteration",,,,,,,,,,,,
+structural_type,somatic_genomics,,dropdown,Structural Type,"1, Amplification | 2, Deletion | 3, Fusion | 4, Complex",Type of structural mutation,,,,,[mutation_type] = '2',,,,,,
+five_prime_partner,somatic_genomics,,text,5' Gene Partner,,,,,,,[structural_type]=3,,,,,, @HIDDEN
+three_prime_partner,somatic_genomics,,text,3' Gene Partner,,,,,,,[structural_type]=3,,,,,, @HIDDEN
+fusion_breakpoint,somatic_genomics,,text,Fusion Breakpoint,,Exact breakpoint or any information from NGS report,,,,,[structural_type]=3,,,,,, @HIDDEN
+genome_assembly_genomics,somatic_genomics,,dropdown,Genome Assembly,"1, GRCh38 | 2, GRCh37/Hg19 | 3, Hg18 | 99, Unknown",,,,,,,,,,,,
+cytogen_loc,somatic_genomics,,text,Cytogenetic Location,,"e.g., chr7: 140434535-140434535",,,,,,,,,,," @CALCTEXT(concat(""chr"", [cytogen_loc_chromosome], "": "", [cytogen_loc_start_pos], ""-"", [cytogen_loc_end_pos]))"
+cytogen_loc_chromosome,somatic_genomics,,text,Cytogenetic Location - Chromosome,,"e.g., 7",,,,,,,,,,,
+cytogen_loc_start_pos,somatic_genomics,,text,Cytogenetic Location - Start Position,,"e.g., 140434535",,,,,,,,,,,
+cytogen_loc_end_pos,somatic_genomics,,text,Cytogenetic Location - End Position,,"e.g., 140434535",integer,,,,,,,,,,
+reference_allele,somatic_genomics,,text,Reference Allele,,"Reference Allele (A, T, C, G)",,,,,,,,,,,
+altered_allele,somatic_genomics,,text,Altered Allele,,"Altered Allele (A, T, C, G)",,,,,,,,,,,
+refseq_id,somatic_genomics,,text,Refseq ID,,Reference sequence ID by NCBI,,,,,,,,,,,
+ensembl_id,somatic_genomics,,text,Ensembl ID,,,,,,,,,,,,,
+cosmic,somatic_genomics,,text,Cosmic ID,,,,,,,,,,,,,
+dbsnp,somatic_genomics,,text,DBSNP ID,,,,,,,,,,,,,
+clinvar,somatic_genomics,,text,ClinVar ID,,,,,,,,,,,,,
+mutation_class,somatic_genomics,,radio,Mutation Classification,"1, Missense | 2, Nonsense | 3, Frameshift | 4, Inframe Deletion | 5, Inframe Insertion | 6, Splice Site Variant | 7, Complex | 8, Silent | 9, Intron | 10, 3'UTR | 11, Promoter Region",The mutation classification based on the provided codes,,,,,[mutation_type] = '1',,,,,, @HIDDEN
+nucleotide_change_hgvs,somatic_genomics,,text,Nucleotide Change,,Example: chr12:1455 C>G,,,,,,,,,,, @HIDDEN
+cdna_change_hgvs,somatic_genomics,,text,cDNA Change,,Example: c.230G>T,,,,,,,,,,,
+amino_acid_change_hgvs,somatic_genomics,,text,Amino Acid Change,,Example: p.G79*,,,,,,,,,,,
+allelic_state,somatic_genomics,,radio,Allelic State,"1, Homozygous | 2, Heterozygous | 3, Hemizygous | 4, Heteroplasmic | 5, Homoplasmic",The classification of allelic state using one of the five provided codes,,,,,,,,,,, @HIDDEN
+mutation_vaf,somatic_genomics,,text,Variant Allele Frequency (%),,The allele frequency represents the incidence of a gene variant in a population - this is a percentage,,,,,,,,,,,
+itd_present,somatic_genomics,,yesno,Internal Tandem Duplication (ITD) Present,,,,,,,,,,,,,
+itd_num_base_pairs,somatic_genomics,,text,ITD Number of Base Pairs,,,integer,,,,,,,,,,
+cn_fold,somatic_genomics,,text,Copy Number Fold,,The genomic trait involving the number of copies of a particular gene present in the genome of an individual,number,,,,[structural_type] = '1',,,,,, @HIDDEN
+vus,somatic_genomics,,radio,"Is the mutation listed as a VUS in the NGS report?
+","1, Yes | 0, No | 99, Unknown",The mutation is listed as a VUS in the NGS report,,,,,,,,,,, @HIDDEN
+genomics_report_recs,somatic_genomics,,checkbox,Recommendations Listed on NGS Report,"0, FDA-approved Drug in Tumor Type | 1, Off-label Use | 2, Clinical Trial | 3, Not Applicable | 4, None",The recommendation listed on NGS report,,,,,,,,,,, @HIDDEN
+variant_category_mdl,somatic_genomics,,text,Variant Origin Category,,,,,,,,,,,,,
+variant_origin,somatic_genomics,,radio,Variant Origin,"0, Possibly Somatic | 1, Possibly Germline | 2, Inconclusive | 3, Confirmed Somatic | 4, Confirmed Germline | 5, Possibly Clonal Hematopoiesis","The genomic class of the specimen being analyzed, for example, germline",,,,,,,,,,, @HIDDEN
+variant_origin_calculated,somatic_genomics,,text,Variant Origin,,,,,,,,,,,,," @CALCTEXT(concat(
+ if([variant_category_mdl] = ""1"", ""This variant has been reported as a somatic mutation in the COSMIC database."", """"),
+ if([variant_category_mdl] = ""2a"", ""This variant may result in a loss-of-function type of mutation. Although this variant has not been reported in the COSMIC database, it likely represents a pathogenic somatic mutation."", """"),
+ if([variant_category_mdl] = ""2b"", ""This variant has been reported in both the COSMIC and dbSNP databases. However, given the allele frequency (< 40% or >60%), this likely represents a somatic mutation."", """"),
+ if([variant_category_mdl] = ""2c"", ""This variant has not been reported in either the COSMIC or dbSNP databases. However, given the allele frequency (< 40% or >60%), this likely represents a somatic mutation."", """"),
+ if([variant_category_mdl] = ""3"", ""This variant has not been reported in the dbSNP database or has been reported as a  rare SNP. Given the allele frequency (40-60%), this likely represents a rare germline variant of uncertain signficance."", """")
+))"
+variant_clin_significance,somatic_genomics,,radio,Variant Clinical Significance,"0, Oncogenic | 1, Likely Oncogenic | 2, Uncertain Significance | 3, Pathogenic | 4, Likely Pathogenic",The variant clinical significance depending on pathogenicity,,,,,,,,,,, @HIDDEN
+extraction_err_flag_genomics,somatic_genomics,,truefalse,Automatic Extraction Error Flag - Data Needs Review,,,,,,,,,,,,,
+date_cur_genomics,somatic_genomics,,text,Date Last Curated (Somatic Genomics),,"Date of curation in the form MMDDYYYY, hyphens will be autocompleted",datetime_seconds_mdy,,,,,,,,,, @HIDDEN-SURVEY
+cur_by_genomics,somatic_genomics,,text,Curated By (Somatic Genomics),,Please enter your full name,,,,,,,,,,, @HIDDEN-SURVEY
+genomics_last_updated_dt,somatic_genomics,,text,Last Updated Date,,,,,,,,,,,,, @READONLY @NOW
